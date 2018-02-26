@@ -15,10 +15,13 @@ export const elementShotMatchers: jasmine.CustomMatcherFactories = {
                 const result: jasmine.CustomMatcherResult = { pass: (actual.misMatchPercentage <= toleratedMisMatchPercentage) };
 
                 if (result.pass) {
-                    result.message = 'Expected element shot to not be free of any regression';
+                    result.message = (toleratedMisMatchPercentage === 0) ?
+                        'Expected the element shot to not be free of any regression.' :
+                        `Expected the element shot to have a mismatch above the tolerated value of ${ toleratedMisMatchPercentage }% but it was ${ actual.misMatchPercentage }% instead.`; // tslint:disable-line:max-line-length
                 } else {
-                    console.log(actual.misMatchPercentage);
-                    result.message = 'Expected element shot to be free of any regression.';
+                    result.message = (toleratedMisMatchPercentage === 0) ?
+                        `Expected the element shot to be free of any regression but it has a mismatch of ${ actual.misMatchPercentage }%.` : // tslint:disable-line:max-line-length
+                        `Expected the element shot to have a mismatch below the tolerated value of ${ toleratedMisMatchPercentage }% but it was ${ actual.misMatchPercentage }% instead.`; // tslint:disable-line:max-line-length
                 }
 
                 if (result.pass) {
