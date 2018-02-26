@@ -1,0 +1,70 @@
+{
+  "author": "Christoph Guttandin",
+  "bugs": {
+    "url": "https://github.com/chrisguttandin/element-shot/issues"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "node-resemble-js": "^0.2.0",
+    "png-crop": "0.0.1",
+    "pngjs": "^3.3.2",
+    "protractor": "^5.3.0",
+    "tslib": "^1.9.0"
+  },
+  "description": "A module to take a screenshot of an HTML element with Protractor and test it with Jasmine.",
+  "devDependencies": {
+    "@types/jasmine": "^2.8.6",
+    "@types/pngjs": "^3.3.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.18.1",
+    "eslint-config-holy-grail": "^25.0.0",
+    "greenkeeper-lockfile": "^1.13.2",
+    "grunt": "^1.0.2",
+    "grunt-babel": "^7.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "grunt-sh": "^0.2.0",
+    "grunt-tslint": "^5.0.1",
+    "gruntify-eslint": "^4.0.0",
+    "husky": "^0.14.3",
+    "jasmine": "^3.0.0",
+    "load-grunt-config": "^0.19.2",
+    "mocha": "^5.0.1",
+    "sinon": "^4.4.1",
+    "sinon-chai": "^2.14.0",
+    "tsconfig-holy-grail": "^4.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-holy-grail": "^22.0.6",
+    "typescript": "^2.7.2"
+  },
+  "engines": {
+    "node": ">=6.11.2"
+  },
+  "files": [
+    "build/es2015/",
+    "build/node/",
+    "src/"
+  ],
+  "homepage": "https://github.com/chrisguttandin/element-shot",
+  "license": "MIT",
+  "main": "build/node/module.js",
+  "name": "element-shot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisguttandin/element-shot.git"
+  },
+  "scripts": {
+    "precommit": "grunt lint",
+    "prepublishOnly": "grunt build",
+    "test": "grunt lint && grunt test"
+  },
+  "types": "build/es2015/module.d.ts",
+  "version": "1.0.0"
+}
