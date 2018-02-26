@@ -11,7 +11,7 @@ export * from './interfaces';
 export const elementShotMatchers: jasmine.CustomMatcherFactories = {
     toBeRegressionFree (): jasmine.CustomMatcher {
         return {
-            compare (actual: IResembleResult, toleratedMisMatchPercentage: number = 0) {
+            compare (actual: IResembleResult, toleratedMisMatchPercentage = 0) {
                 const result: jasmine.CustomMatcherResult = { pass: (actual.misMatchPercentage <= toleratedMisMatchPercentage) };
 
                 if (result.pass) {
@@ -63,7 +63,12 @@ export const resembleElementShot = async (locator: Locator, filename: string): P
                     writeFileSync(`${ filename }.${ browserName }.diff.png`, PNG.sync.write(getDiffImage()));
                     writeFileSync(`${ filename }.${ browserName }.regression.png`, elementShot);
 
-                    resolve({ dimensionDifference, filename: `${ filename }.${ browserName }`, isSameDimensions, misMatchPercentage: parseFloat(misMatchPercentage) });
+                    resolve({
+                        dimensionDifference,
+                        filename: `${ filename }.${ browserName }`,
+                        isSameDimensions,
+                        misMatchPercentage: parseFloat(misMatchPercentage)
+                    });
                 });
         } catch (err) {
             if (err.code === 'ENOENT') {
