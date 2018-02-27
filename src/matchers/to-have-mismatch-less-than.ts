@@ -1,15 +1,15 @@
 import { deleteDiffAndRegressionFile } from '../helpers/delete-diff-and-regression-file';
 import { IResembleResult } from '../interfaces';
 
-export const toHaveMisMatchLessThan = (): jasmine.CustomMatcher => {
+export const toHaveMismatchLessThan = (): jasmine.CustomMatcher => {
     return {
-        compare (actual: IResembleResult, toleratedMisMatchPercentage: number) {
-            const result: jasmine.CustomMatcherResult = { pass: (actual.misMatchPercentage < toleratedMisMatchPercentage) };
+        compare (actual: IResembleResult, toleratedMismatchPercentage: number) {
+            const result: jasmine.CustomMatcherResult = { pass: (actual.mismatchPercentage < toleratedMismatchPercentage) };
 
             if (result.pass) {
-                result.message = `Expected the element shot to have a mismatch above the tolerated value of ${ toleratedMisMatchPercentage }% but it was ${ actual.misMatchPercentage }% instead.`; // tslint:disable-line:max-line-length
+                result.message = `Expected the element shot to have a mismatch above the tolerated value of ${ toleratedMismatchPercentage }% but it was ${ actual.mismatchPercentage }% instead.`; // tslint:disable-line:max-line-length
             } else {
-                result.message = `Expected the element shot to have a mismatch below the tolerated value of ${ toleratedMisMatchPercentage }% but it was ${ actual.misMatchPercentage }% instead.`; // tslint:disable-line:max-line-length
+                result.message = `Expected the element shot to have a mismatch below the tolerated value of ${ toleratedMismatchPercentage }% but it was ${ actual.mismatchPercentage }% instead.`; // tslint:disable-line:max-line-length
             }
 
             if (!actual.isSameDimensions) {

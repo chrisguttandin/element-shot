@@ -12,6 +12,6 @@ export interface IResembleResult {
 
     isSameDimensions: boolean;
 
-    misMatchPercentage: number;
+    mismatchPercentage: number;
 
 }

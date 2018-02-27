@@ -1,18 +1,18 @@
 import { deleteDiffAndRegressionFile } from '../helpers/delete-diff-and-regression-file';
 import { IResembleResult } from '../interfaces';
 
-export const toHaveMisMatchWithinRange = (): jasmine.CustomMatcher => {
+export const toHaveMismatchWithinRange = (): jasmine.CustomMatcher => {
     return {
-        compare (actual: IResembleResult, minimalToleratedMisMatchPercentage: number, maximalToleratedMisMatchPercentage: number) {
+        compare (actual: IResembleResult, minimalToleratedMismatchPercentage: number, maximalToleratedMismatchPercentage: number) {
             const result: jasmine.CustomMatcherResult = {
-                pass: (actual.misMatchPercentage > minimalToleratedMisMatchPercentage &&
-                    actual.misMatchPercentage < maximalToleratedMisMatchPercentage)
+                pass: (actual.mismatchPercentage > minimalToleratedMismatchPercentage &&
+                    actual.mismatchPercentage < maximalToleratedMismatchPercentage)
             };
 
             if (result.pass) {
-                result.message = `Expected the element shot to have a mismatch within the tolerated range from ${ minimalToleratedMisMatchPercentage }% to ${ maximalToleratedMisMatchPercentage }% but it was ${ actual.misMatchPercentage }% instead.`; // tslint:disable-line:max-line-length
+                result.message = `Expected the element shot to have a mismatch within the tolerated range from ${ minimalToleratedMismatchPercentage }% to ${ maximalToleratedMismatchPercentage }% but it was ${ actual.mismatchPercentage }% instead.`; // tslint:disable-line:max-line-length
             } else {
-                result.message = `Expected the element shot to have a mismatch within the tolerated range from ${ minimalToleratedMisMatchPercentage }% to ${ maximalToleratedMisMatchPercentage }% but it was ${ actual.misMatchPercentage }% instead.`; // tslint:disable-line:max-line-length
+                result.message = `Expected the element shot to have a mismatch within the tolerated range from ${ minimalToleratedMismatchPercentage }% to ${ maximalToleratedMismatchPercentage }% but it was ${ actual.mismatchPercentage }% instead.`; // tslint:disable-line:max-line-length
             }
 
             if (!actual.isSameDimensions) {

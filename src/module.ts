@@ -6,15 +6,15 @@ import { getBrowserName } from './helpers/get-browser-name';
 import { takeElementShot } from './helpers/take-element-shot';
 import { IElementShotMatchers, IResembleResult } from './interfaces';
 import { toBeRegressionFree } from './matchers/to-be-regression-free';
-import { toHaveMisMatchLessThan } from './matchers/to-have-mis-match-less-than';
-import { toHaveMisMatchWithinRange } from './matchers/to-have-mis-match-within-range';
+import { toHaveMismatchLessThan } from './matchers/to-have-mismatch-less-than';
+import { toHaveMismatchWithinRange } from './matchers/to-have-mismatch-within-range';
 
 export * from './interfaces';
 
 export const elementShotMatchers: jasmine.CustomMatcherFactories = {
     toBeRegressionFree,
-    toHaveMisMatchLessThan,
-    toHaveMisMatchWithinRange
+    toHaveMismatchLessThan,
+    toHaveMismatchWithinRange
 };
 
 export const expectElementShot = (result: IResembleResult): IElementShotMatchers => {
@@ -39,7 +39,7 @@ export const resembleElementShot = async (locator: Locator, filename: string): P
                         dimensionDifference,
                         filename: `${ filename }.${ browserName }`,
                         isSameDimensions,
-                        misMatchPercentage: parseFloat(misMatchPercentage)
+                        mismatchPercentage: parseFloat(misMatchPercentage)
                     });
                 });
         } catch (err) {
@@ -52,7 +52,7 @@ export const resembleElementShot = async (locator: Locator, filename: string): P
                     dimensionDifference: { height: 0, width: 0 },
                     filename: `${ filename }.${ browserName }`,
                     isSameDimensions: true,
-                    misMatchPercentage: 0
+                    mismatchPercentage: 0
                 });
             } else {
                 reject(err);
