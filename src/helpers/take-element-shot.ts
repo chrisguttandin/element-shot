@@ -44,8 +44,11 @@ export const takeElementShot = (locator: Locator): Promise<Buffer> => {
         .getWebElement();
 
     return scrollElementIntoView(webElement)
-        // @todo Waiting 200 milliseconds seems to be necessary to fully apply the scrolling.
-        .then(() => new Promise((resolve) => setTimeout(resolve, 200)))
+        /*
+         * @todo Waiting 300 milliseconds seems to be necessary to fully apply the scrolling. It would be better to somehow detect when the
+         * scrolling is done.
+         */
+        .then(() => new Promise((resolve) => setTimeout(resolve, 300)))
         .then(() => Promise
             .all([
                 getInnerHeight(),
