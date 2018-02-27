@@ -6,4 +6,6 @@ export interface IElementShotMatchers extends jasmine.Matchers<Locator> {
 
     toBeRegressionFree (number?: number): boolean;
 
+    toHaveMisMatchWithinRange (minimum: number, maximum: number): boolean;
+
 }
