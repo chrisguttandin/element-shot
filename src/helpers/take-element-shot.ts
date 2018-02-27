@@ -65,12 +65,12 @@ export const takeElementShot = (locator: Locator): Promise<Buffer> => {
                 const pixelRatio = (screenShotWidth / innerWidth);
 
                 cropToStream(screenshot, {
-                    height: Math.round(size.height * pixelRatio),
-                    left: Math.round(location.x * pixelRatio),
-                    top: Math.round((innerHeight === screenShotHeight / pixelRatio) ?
-                        ((location.y * pixelRatio) - (scrollTop * pixelRatio)) :
-                        (location.y * pixelRatio)),
-                    width: Math.round(size.width * pixelRatio)
+                    height: Math.round(size.height) * pixelRatio,
+                    left: Math.round(location.x) * pixelRatio,
+                    top: (innerHeight === screenShotHeight / pixelRatio) ?
+                        Math.round(location.y - scrollTop) * pixelRatio :
+                        Math.round(location.y) * pixelRatio,
+                    width: Math.round(size.width) * pixelRatio
                 }, (err, stream) => {
                     if (err === null) {
                         let buffer = Buffer.alloc(0);
