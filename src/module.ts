@@ -7,11 +7,14 @@ import { takeElementShot } from './helpers/take-element-shot';
 import { IElementShotMatchers, IResembleResult } from './interfaces';
 import { toBeRegressionFree } from './matchers/to-be-regression-free';
 import { toHaveMisMatchLessThan } from './matchers/to-have-mis-match-less-than';
+import { toHaveMisMatchWithinRange } from './matchers/to-have-mis-match-within-range';
+
 export * from './interfaces';
 
 export const elementShotMatchers: jasmine.CustomMatcherFactories = {
     toBeRegressionFree,
-    toHaveMisMatchLessThan
+    toHaveMisMatchLessThan,
+    toHaveMisMatchWithinRange
 };
 
 export const expectElementShot = (result: IResembleResult): IElementShotMatchers => {
