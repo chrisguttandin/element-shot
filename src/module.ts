@@ -24,6 +24,16 @@ export const elementShotMatchers: jasmine.CustomMatcherFactories = {
                         `Expected the element shot to have a mismatch below the tolerated value of ${ toleratedMisMatchPercentage }% but it was ${ actual.misMatchPercentage }% instead.`; // tslint:disable-line:max-line-length
                 }
 
+                if (!actual.isSameDimensions) {
+                    if (actual.dimensionDifference.height === 0) {
+                        result.message += ` The dimensions do differ by a width of ${ actual.dimensionDifference.width }px.`;
+                    } else if (actual.dimensionDifference.width === 0) {
+                        result.message += ` The dimensions do differ by a height of ${ actual.dimensionDifference.height }px.`;
+                    } else {
+                        result.message += ` The dimensions do differ by a height of ${ actual.dimensionDifference.height }px and by a width of ${ actual.dimensionDifference.width }px.`; // tslint:disable-line:max-line-length
+                    }
+                }
+
                 if (result.pass) {
                     try {
                         unlinkSync(`${ actual.filename }.diff.png`);
