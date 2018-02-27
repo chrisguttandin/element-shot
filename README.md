@@ -1,5 +1,7 @@
 # element-shot
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/chrisguttandin/element-shot.svg)](https://greenkeeper.io/)
+
 **A module to take a screenshot of an HTML element with Protractor and test it with Jasmine.**
 
 [![tests](https://img.shields.io/travis/chrisguttandin/element-shot/master.svg?style=flat-square)](https://travis-ci.org/chrisguttandin/element-shot)
