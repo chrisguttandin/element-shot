@@ -24,15 +24,16 @@ const getScrollTop = (): Promise<number> => new Promise((resolve, reject) => bro
     .executeScript<number>('return (document.scrollingElement || document.documentElement).scrollTop;')
     .then(resolve, reject));
 
-const getSize = (webElement: WebElement): Promise<{ height: number, width: number }> => new Promise((resolve, reject) => webElement
-    .getSize()
-    .then((size) => {
+// This is not using webElement.getSize() because it has different results.
+const getSize = (webElement: WebElement): Promise<{ height: number, width: number }> => new Promise((resolve, reject) => browser
+    .executeScript<{ height: number, width: number }>('return arguments[0].getBoundingClientRect();', webElement)
+    .then(({ height, width }) => {
         // @todo Limit the number of retries.
-        if (size.height === 0) {
+        if (height === 0) {
             return setTimeout(() => resolve(getSize(webElement)), 100);
         }
 
-        return resolve(size);
+        return resolve({ height, width });
     }, reject));
 
 const scrollElementIntoView = (webElement: WebElement): Promise<void> => new Promise((resolve, reject) => browser
