@@ -1,7 +1,7 @@
 import { deleteDiffAndRegressionFile } from '../helpers/delete-diff-and-regression-file';
 import { IResembleResult } from '../interfaces';
 
-export const toHaveMisMatchMisMatchLessThan = (): jasmine.CustomMatcher => {
+export const toHaveMisMatchLessThan = (): jasmine.CustomMatcher => {
     return {
         compare (actual: IResembleResult, toleratedMisMatchPercentage: number) {
             const result: jasmine.CustomMatcherResult = { pass: (actual.misMatchPercentage < toleratedMisMatchPercentage) };
