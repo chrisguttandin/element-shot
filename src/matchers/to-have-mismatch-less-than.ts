@@ -1,15 +1,15 @@
 import { deleteDiffAndRegressionFile } from '../helpers/delete-diff-and-regression-file';
 import { IResembleResult } from '../interfaces';
 
-export const toBeRegressionFree = (): jasmine.CustomMatcher => {
+export const toHaveMisMatchMisMatchLessThan = (): jasmine.CustomMatcher => {
     return {
-        compare (actual: IResembleResult) {
-            const result: jasmine.CustomMatcherResult = { pass: (actual.misMatchPercentage === 0) };
+        compare (actual: IResembleResult, toleratedMisMatchPercentage: number) {
+            const result: jasmine.CustomMatcherResult = { pass: (actual.misMatchPercentage < toleratedMisMatchPercentage) };
 
             if (result.pass) {
-                result.message = 'Expected the element shot to not be free of any regression.';
+                result.message = `Expected the element shot to have a mismatch above the tolerated value of ${ toleratedMisMatchPercentage }% but it was ${ actual.misMatchPercentage }% instead.`; // tslint:disable-line:max-line-length
             } else {
-                result.message = `Expected the element shot to be free of any regression but it has a mismatch of ${ actual.misMatchPercentage }%.`; // tslint:disable-line:max-line-length
+                result.message = `Expected the element shot to have a mismatch below the tolerated value of ${ toleratedMisMatchPercentage }% but it was ${ actual.misMatchPercentage }% instead.`; // tslint:disable-line:max-line-length
             }
 
             if (!actual.isSameDimensions) {

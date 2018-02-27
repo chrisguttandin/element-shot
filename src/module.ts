@@ -6,11 +6,13 @@ import { getBrowserName } from './helpers/get-browser-name';
 import { takeElementShot } from './helpers/take-element-shot';
 import { IElementShotMatchers, IResembleResult } from './interfaces';
 import { toBeRegressionFree } from './matchers/to-be-regression-free';
+import { toHaveMisMatchMisMatchLessThan } from './matchers/to-have-mismatch-less-than';
 
 export * from './interfaces';
 
 export const elementShotMatchers: jasmine.CustomMatcherFactories = {
-    toBeRegressionFree
+    toBeRegressionFree,
+    toHaveMisMatchMisMatchLessThan
 };
 
 export const expectElementShot = (result: IResembleResult): IElementShotMatchers => {
