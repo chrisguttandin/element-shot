@@ -1,41 +1,39 @@
 import { cropToStream } from 'png-crop';
-import { Locator, WebElement, browser, element } from 'protractor';
+import { Locator, WebElement, element } from 'protractor';
 import { IBoundingClientRect } from '../interfaces';
-
-// @todo Wrapping all the promises returned by Protractor is currently necessary to get a native Promise.
+import { executeScript } from './execute-script';
+import { takeScreenshot } from './take-screenshot';
 
 // This is not using webElement.getLocation() and webElement.getSize() because they have different results.
-const getBoundingClientRect = (webElement: WebElement): Promise<IBoundingClientRect> => new Promise((resolve, reject) => browser
-    .executeScript<IBoundingClientRect>('return arguments[0].getBoundingClientRect();', webElement)
-    .then(({ height, width, x, y }) => {
-        // @todo Limit the number of retries.
-        if (height === 0) {
-            return setTimeout(() => resolve(getBoundingClientRect(webElement)), 100);
-        }
+const getBoundingClientRect = (webElement: WebElement): Promise<IBoundingClientRect> => {
+    return executeScript<IBoundingClientRect>('return arguments[0].getBoundingClientRect();', 5, webElement)
+        .then(({ height, width, x, y }) => {
+            // @todo Limit the number of retries.
+            if (height === 0) {
+                return new Promise<IBoundingClientRect>((resolve) => setTimeout(() => resolve(getBoundingClientRect(webElement)), 100));
+            }
 
-        return resolve({ height, width, x, y });
-    }, reject));
+            return { height, width, x, y };
+        });
+};
 
-const getInnerHeight = (): Promise<number> => new Promise((resolve, reject) => browser
-    .executeScript<number>('return innerHeight;')
-    .then(resolve, reject));
+const getInnerHeight = (): Promise<number> => executeScript<number>('return innerHeight;');
 
-const getInnerWidth = (): Promise<number> => new Promise((resolve, reject) => browser
-    .executeScript<number>('return innerWidth;')
-    .then(resolve, reject));
+const getInnerWidth = (): Promise<number> => executeScript<number>('return innerWidth;');
 
-const getScreenshotAsBuffer = (): Promise<Buffer> => new Promise((resolve, reject) => browser
-    .takeScreenshot()
-    .then((png) => Buffer.from(png, 'base64'))
-    .then(resolve, reject));
+const getScreenshotAsBuffer = async (): Promise<Buffer> => {
+    const png = await takeScreenshot();
 
-const getScrollTop = (): Promise<number> => new Promise((resolve, reject) => browser
-    .executeScript<number>('return (document.scrollingElement || document.documentElement).scrollTop;')
-    .then(resolve, reject));
+    return Buffer.from(png, 'base64');
+};
 
-const scrollElementIntoView = (webElement: WebElement): Promise<void> => new Promise((resolve, reject) => browser
-    .executeScript("arguments[0].scrollIntoView({ behavior: 'instant' });", webElement)
-    .then(() => resolve(), reject));
+const getScrollTop = (): Promise<number> => {
+    return executeScript<number>('return (document.scrollingElement || document.documentElement).scrollTop;');
+};
+
+const scrollElementIntoView = (webElement: WebElement): Promise<void> => {
+    return executeScript("arguments[0].scrollIntoView({ behavior: 'instant' });", 5, webElement);
+};
 
 export const takeElementShot = (locator: Locator): Promise<Buffer> => {
     const webElement = element(locator)
