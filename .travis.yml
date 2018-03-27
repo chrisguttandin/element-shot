@@ -4,7 +4,7 @@ before_script: greenkeeper-lockfile-update
 env:
   global:
     - secure: a/XkOYsBwnJUV2dI26mIQ4vk5SswQ2tDYhfZ1pEPaM53+bFhkjJLeqZ5JTHqxascKxPtUHU/6lNfQRQdAcwo54F/k5C21ut6j6oErfJzWYb02zIB+Nz4l1dgEva/6zOLo4xHPQfp3LYNTmHdz2Ye426xAufyyxs90JF4tJVomhpWhXkIE8QHBTqduWVMwGVb8Jp4wED/6q1Gs6RX/b+/lnS0k0y2g+8lZT8yWRqdckxokn8oi+oAR1UhBjLz6t/reuJC4epenRX3WyuRWEHIpYpc7h+CogCwreMdO6WrgeBKHn8NbEXXxLL/9/4mX5xa3iMD/u0Duv+uYu4LF5/HNm2cRo/sJBn9w3sMbDTYZT2KStArbgl/D2cIjF1zJ/PGC7dzVxsp9CPSQsMRlIBwE7TfLzm6ofDtMdnsNlcmICoLmeokNoIQJg8VdkYT2FT+HAsesJCMVnHyE0F4CEZ8jx5nhfI7kyPclNK7CRvJidzs70bI+pXLRYwF2LTta/u5/tNsgi8GA9rcu0mPVJ3JoupmjX94q380s2CzzPSzjyUAZJVe5u3DlovllWuHOhJL+98FU3PwfPYOFYH699MbqyHtgfmcvBUu7KW29nZLhjmbQFPhGTerIddSTUFQrheQbk2n68tGVywbPvHkXK3J7cNcc4HktX8a8athrv+AlK0=
-install: npm ci
+install: "npm ci ||\_npm i"
 language: node_js
 node_js: 6
 sudo: false
