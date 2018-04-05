@@ -32,9 +32,9 @@ export const resembleElementShot = async (locator: Locator, filename: string): P
             resemble(baseline)
                 .compareTo(elementShot)
                 .onComplete(({ dimensionDifference, getDiffImage, isSameDimensions, misMatchPercentage }) => {
-                    const png = new PNG();
+                    const png = PNG.sync.read(getDiffImage());
 
-                    writeFileSync(`${ filename }.${ browserName }.diff.png`, PNG.sync.write(png.parse(getDiffImage())));
+                    writeFileSync(`${ filename }.${ browserName }.diff.png`, PNG.sync.write(png));
                     writeFileSync(`${ filename }.${ browserName }.regression.png`, elementShot);
 
                     resolve({
