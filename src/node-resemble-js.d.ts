@@ -1,5 +1,7 @@
 declare module 'node-resemble-js' {
 
+    import { PNG } from 'pngjs';
+
     export interface IData {
 
         analysisTime: number;
@@ -16,7 +18,7 @@ declare module 'node-resemble-js' {
 
         misMatchPercentage: string;
 
-        getDiffImage (): Buffer;
+        getDiffImage (): PNG;
 
         getDiffImageAsJPEG (): Buffer;
 
