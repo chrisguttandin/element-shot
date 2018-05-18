@@ -71,9 +71,9 @@ export const takeElementShot = (locator: Locator): Promise<Buffer> => {
                         let buffer = Buffer.alloc(0);
 
                         stream
-                            .on('data', (data) => buffer = Buffer.concat([ buffer, data ], (buffer.length + data.length)))
+                            .on('data', (data: Buffer) => buffer = Buffer.concat([ buffer, data ], (buffer.length + data.length)))
                             .on('end', () => resolve(buffer))
-                            .on('error', (rr) => reject(rr));
+                            .on('error', (rr: Error) => reject(rr));
                     } else {
                         reject(err);
                     }
