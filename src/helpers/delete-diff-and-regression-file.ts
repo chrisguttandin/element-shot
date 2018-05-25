@@ -5,7 +5,7 @@ export const deleteDiffAndRegressionFile = (filename: String): void => {
         unlinkSync(`${ filename }.diff.png`);
     } catch (err) {
         if (err.code !== 'ENOENT') {
-            throw err;
+            throw err; // tslint:disable-line:rxjs-throw-error
         }
     }
 
@@ -13,7 +13,7 @@ export const deleteDiffAndRegressionFile = (filename: String): void => {
         unlinkSync(`${ filename }.regression.png`);
     } catch (err) {
         if (err.code !== 'ENOENT') {
-            throw err;
+            throw err; // tslint:disable-line:rxjs-throw-error
         }
     }
 };
