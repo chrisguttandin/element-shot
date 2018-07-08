@@ -63,8 +63,8 @@ export const takeElementShot = (locator: Locator): Promise<Buffer> => {
                     height: Math.round(boundingClientRect.height) * pixelRatio,
                     left: Math.round(boundingClientRect.x) * pixelRatio,
                     top: (innerHeight === screenShotHeight / pixelRatio) ?
-                        Math.round(boundingClientRect.y - scrollTop) * pixelRatio :
-                        Math.round(boundingClientRect.y) * pixelRatio,
+                        Math.round(boundingClientRect.y) * pixelRatio :
+                        Math.round(boundingClientRect.y + scrollTop) * pixelRatio,
                     width: Math.round(boundingClientRect.width) * pixelRatio
                 }, (err, stream) => {
                     if (err === null) {
