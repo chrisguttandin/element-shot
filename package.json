@@ -9,7 +9,6 @@
     }
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
     "node-resemble-js": "^0.2.0",
     "png-crop": "0.0.2",
     "pngjs": "^3.3.3",
