@@ -3,7 +3,7 @@ import { IResembleResult } from '../interfaces';
 
 export const toBeRegressionFree = (): jasmine.CustomMatcher => {
     return {
-        compare (actual: IResembleResult) {
+        compare (actual: IResembleResult): jasmine.CustomMatcherResult {
             const result: jasmine.CustomMatcherResult = { pass: (actual.mismatchPercentage === 0) };
 
             if (result.pass) {

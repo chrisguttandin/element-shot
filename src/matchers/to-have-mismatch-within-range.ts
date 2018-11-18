@@ -3,7 +3,11 @@ import { IResembleResult } from '../interfaces';
 
 export const toHaveMismatchWithinRange = (): jasmine.CustomMatcher => {
     return {
-        compare (actual: IResembleResult, minimalToleratedMismatchPercentage: number, maximalToleratedMismatchPercentage: number) {
+        compare (
+            actual: IResembleResult,
+            minimalToleratedMismatchPercentage: number,
+            maximalToleratedMismatchPercentage: number
+        ): jasmine.CustomMatcherResult {
             const result: jasmine.CustomMatcherResult = {
                 pass: (actual.mismatchPercentage > minimalToleratedMismatchPercentage &&
                     actual.mismatchPercentage < maximalToleratedMismatchPercentage)
