@@ -1,4 +1,4 @@
-declare module 'node-resemble-js' {
+declare module 'resemblejs' {
 
     import { PNG } from 'pngjs';
 

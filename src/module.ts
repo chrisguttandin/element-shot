@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs';
-import resemble from 'node-resemble-js';
 import { PNG } from 'pngjs';
 import { Locator } from 'protractor';
+import resemble from 'resemblejs';
 import { getBrowserName } from './helpers/get-browser-name';
 import { takeElementShot } from './helpers/take-element-shot';
 import { IElementShotMatchers, IResembleResult } from './interfaces';
