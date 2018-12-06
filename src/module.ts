@@ -1,5 +1,4 @@
 import { readFileSync, writeFileSync } from 'fs';
-import { PNG } from 'pngjs';
 import { Locator } from 'protractor';
 import resemble from 'resemblejs';
 import { getBrowserName } from './helpers/get-browser-name';
@@ -31,8 +30,8 @@ export const resembleElementShot = async (locator: Locator, filename: string): P
 
             resemble(baseline)
                 .compareTo(elementShot)
-                .onComplete(({ dimensionDifference, getDiffImage, isSameDimensions, misMatchPercentage }) => {
-                    writeFileSync(`${ filename }.${ browserName }.diff.png`, PNG.sync.write(getDiffImage()));
+                .onComplete(({ dimensionDifference, getBuffer, isSameDimensions, misMatchPercentage }) => {
+                    writeFileSync(`${ filename }.${ browserName }.diff.png`, getBuffer());
                     writeFileSync(`${ filename }.${ browserName }.regression.png`, elementShot);
 
                     resolve({
