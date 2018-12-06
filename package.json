@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "png-crop": "0.0.2",
-    "pngjs": "^3.3.3",
     "protractor": "^5.4.1",
     "resemblejs": "^3.0.0",
     "tslib": "^1.9.3"
