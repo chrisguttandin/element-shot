@@ -40,6 +40,7 @@
     "jasmine": "^3.3.1",
     "load-grunt-config": "^0.19.2",
     "mocha": "^5.2.0",
+    "resemblejs": "^3.0.0",
     "sinon": "^7.1.1",
     "sinon-chai": "^3.3.0",
     "tsconfig-holy-grail": "^9.0.2",
