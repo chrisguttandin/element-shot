@@ -9,7 +9,6 @@
     }
   },
   "dependencies": {
-    "node-resemble-js": "^0.2.0",
     "png-crop": "0.0.2",
     "pngjs": "^3.3.3",
     "protractor": "^5.4.1",
