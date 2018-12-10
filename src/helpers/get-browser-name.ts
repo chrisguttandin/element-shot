@@ -5,4 +5,5 @@ import { browser } from 'protractor';
 export const getBrowserName = (): Promise<number> => new Promise((resolve, reject) => browser
     .getCapabilities()
     .then((capabilities) => capabilities.get('browserName'))
+    .then((browserName) => browserName.toLowerCase())
     .then(resolve, reject));
