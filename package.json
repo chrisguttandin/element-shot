@@ -21,7 +21,7 @@
     "@babel/register": "^7.4.0",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-angular": "^7.5.0",
-    "@types/jasmine": "^3.3.9",
+    "@types/jasmine": "^3.3.12",
     "@types/pngjs": "^3.3.2",
     "chai": "^4.2.0",
     "commitizen": "^3.0.7",
