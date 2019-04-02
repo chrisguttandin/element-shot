@@ -40,7 +40,7 @@
     "load-grunt-config": "^1.0.1",
     "mocha": "^6.0.2",
     "tsconfig-holy-grail": "^9.1.14",
-    "tslint": "^5.14.0",
+    "tslint": "^5.15.0",
     "tslint-config-holy-grail": "^42.0.1",
     "typescript": "^3.4.1"
   },
