@@ -12,38 +12,38 @@ describe('boxes', () => {
         browser.get(`file://${ resolve(__dirname, '../..') }/test/fixtures/boxes.html`);
     });
 
-    describe('red box', () => {
+    describe('gray box', () => {
 
         it('should look the same', async () => {
-            const result = await resembleElementShot(by.id('red-box'), 'test/screenshots/red-box');
+            const result = await resembleElementShot(by.id('gray-box'), 'test/screenshots/gray-box');
 
             expectElementShot(result).toBeRegressionFree();
         });
 
     });
 
-    describe('red box with blue dot', () => {
+    describe('gray box with black dot', () => {
 
         it('should look the same', async () => {
-            const result = await resembleElementShot(by.id('red-box-with-blue-dot'), 'test/screenshots/red-box-with-blue-dot');
+            const result = await resembleElementShot(by.id('gray-box-with-black-dot'), 'test/screenshots/gray-box-with-black-dot');
 
             expectElementShot(result).toBeRegressionFree();
         });
 
-        it('should not look exactly like the red box', async () => {
-            const result = await resembleElementShot(by.id('red-box-with-blue-dot'), 'test/screenshots/red-box');
+        it('should not look exactly like the gray box', async () => {
+            const result = await resembleElementShot(by.id('gray-box-with-black-dot'), 'test/screenshots/gray-box');
 
             expectElementShot(result).not.toBeRegressionFree();
         });
 
-        it('should look the almost like the red box', async () => {
-            const result = await resembleElementShot(by.id('red-box-with-blue-dot'), 'test/screenshots/red-box');
+        it('should look the almost like the gray box', async () => {
+            const result = await resembleElementShot(by.id('gray-box-with-black-dot'), 'test/screenshots/gray-box');
 
             expectElementShot(result).toHaveMismatchLessThan(2);
         });
 
-        it('should look the almost like the red box', async () => {
-            const result = await resembleElementShot(by.id('red-box-with-blue-dot'), 'test/screenshots/red-box');
+        it('should look the almost like the gray box', async () => {
+            const result = await resembleElementShot(by.id('gray-box-with-black-dot'), 'test/screenshots/gray-box');
 
             expectElementShot(result).toHaveMismatchWithinRange(0.5, 1.5);
         });
