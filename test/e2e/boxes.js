@@ -36,13 +36,13 @@ describe('boxes', () => {
             expectElementShot(result).not.toBeRegressionFree();
         });
 
-        it('should look the almost like the gray box', async () => {
+        it('should look almost like the gray box', async () => {
             const result = await resembleElementShot(by.id('gray-box-with-black-dot'), 'test/screenshots/gray-box');
 
             expectElementShot(result).toHaveMismatchLessThan(2);
         });
 
-        it('should look the almost like the gray box', async () => {
+        it('should look almost like the gray box', async () => {
             const result = await resembleElementShot(by.id('gray-box-with-black-dot'), 'test/screenshots/gray-box');
 
             expectElementShot(result).toHaveMismatchWithinRange(0.5, 1.5);
