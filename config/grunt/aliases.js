@@ -11,6 +11,7 @@ module.exports = {
     ],
     test: [
         'build',
+        'sh:test-e2e',
         'sh:test-integration'
     ]
 };
