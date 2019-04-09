@@ -12,7 +12,7 @@ export const executeScript = <T> (script: string, retries = 5, ...args: any[]): 
         browser
             .executeScript<T>(script, ...args)
             .then((result) => resolve(result))
-            .catch((err: any) => {
+            .catch((err) => {
                 if (retries > 0) {
                     resolve(executeScript(script, retries - 1));
                 } else {

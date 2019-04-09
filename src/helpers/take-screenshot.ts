@@ -12,7 +12,7 @@ export const takeScreenshot = (retries = 5): Promise<string> => {
         browser
             .takeScreenshot()
             .then((result) => resolve(result))
-            .catch((err: any) => {
+            .catch((err) => {
                 if (retries > 0) {
                     resolve(takeScreenshot(retries - 1));
                 } else {
