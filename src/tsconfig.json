@@ -4,5 +4,5 @@
       "jasmine"
     ]
   },
-  "extends": "../node_modules/tsconfig-holy-grail/src/tsconfig-node"
+  "extends": "tsconfig-holy-grail/src/tsconfig-node"
 }
