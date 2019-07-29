@@ -38,7 +38,7 @@
     "husky": "^3.0.2",
     "jasmine": "^3.4.0",
     "load-grunt-config": "^2.0.1",
-    "mocha": "^6.1.4",
+    "mocha": "^6.2.0",
     "tsconfig-holy-grail": "^10.0.9",
     "tslint": "^5.18.0",
     "tslint-config-holy-grail": "^44.0.6",
