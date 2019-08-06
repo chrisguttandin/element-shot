@@ -12,4 +12,4 @@ install: npm ci || (rm -rf node_modules && npm install)
 language: node_js
 node_js:
   - 10
-  - 11
+  - 12
