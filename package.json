@@ -39,7 +39,7 @@
     "jasmine": "^3.4.0",
     "load-grunt-config": "^3.0.0",
     "mocha": "^6.2.0",
-    "tsconfig-holy-grail": "^10.0.10",
+    "tsconfig-holy-grail": "^10.0.11",
     "tslint": "^5.18.0",
     "tslint-config-holy-grail": "^44.0.8",
     "typescript": "^3.5.3"
