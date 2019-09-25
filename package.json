@@ -11,7 +11,7 @@
   "dependencies": {
     "png-crop": "0.0.2",
     "protractor": "^5.4.2",
-    "resemblejs": "^3.2.2",
+    "resemblejs": "^3.2.3",
     "tslib": "^1.10.0"
   },
   "description": "A module to take a screenshot of an HTML element with Protractor and test it with Jasmine.",
