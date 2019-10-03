@@ -12,7 +12,8 @@
     "png-crop": "0.0.2",
     "protractor": "^5.4.2",
     "resemblejs": "^3.2.3",
-    "tslib": "^1.10.0"
+    "tslib": "^1.10.0",
+    "snyk": "^1.230.5"
   },
   "description": "A module to take a screenshot of an HTML element with Protractor and test it with Jasmine.",
   "devDependencies": {
@@ -66,8 +67,11 @@
   },
   "scripts": {
     "prepublishOnly": "grunt build",
-    "test": "grunt lint && grunt test"
+    "test": "grunt lint && grunt test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "types": "build/es2018/module.d.ts",
-  "version": "4.1.4"
+  "version": "4.1.4",
+  "snyk": true
 }
