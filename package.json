@@ -39,7 +39,7 @@
     "mocha": "^6.2.2",
     "tsconfig-holy-grail": "^10.0.29",
     "tslint": "^5.20.1",
-    "tslint-config-holy-grail": "^47.0.1",
+    "tslint-config-holy-grail": "^47.0.2",
     "typescript": "~3.6.4"
   },
   "engines": {
