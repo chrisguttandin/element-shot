@@ -40,7 +40,7 @@
     "tsconfig-holy-grail": "^10.0.41",
     "tslint": "^6.0.0",
     "tslint-config-holy-grail": "^47.0.7",
-    "typescript": "~3.6.5"
+    "typescript": "^3.7.5"
   },
   "engines": {
     "node": ">=10.15.3"
