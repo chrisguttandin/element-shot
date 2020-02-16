@@ -1,3 +1,9 @@
+const { env } = require('process');
+
+// eslint-disable-next-line padding-line-between-statements
+const filter = (predicate, ...tasks) => (predicate) ? tasks : [ ];
+const isType = (...types) => (env.TYPE === undefined || types.includes(env.TYPE));
+
 module.exports = {
     build: [
         'clean:build',
@@ -11,7 +17,7 @@ module.exports = {
     ],
     test: [
         'build',
-        'sh:test-e2e',
-        'sh:test-integration'
+        ...filter(isType('e2e'), 'sh:test-e2e'),
+        ...filter(isType('integration'), 'sh:test-integration')
     ]
 };
