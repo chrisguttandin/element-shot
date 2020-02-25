@@ -31,7 +31,7 @@ const getScrollTop = (): Promise<number> => {
     return executeScript<number>('return (document.scrollingElement || document.documentElement).scrollTop;');
 };
 
-const scrollElementIntoView = (webElement: WebElement): Promise<void> => { // tslint:disable-line:invalid-void
+const scrollElementIntoView = (webElement: WebElement): Promise<void> => {
     return executeScript("arguments[0].scrollIntoView({ behavior: 'instant' });", 5, webElement);
 };
 
