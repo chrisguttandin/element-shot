@@ -8,7 +8,11 @@ import { toBeRegressionFree } from './matchers/to-be-regression-free';
 import { toHaveMismatchLessThan } from './matchers/to-have-mismatch-less-than';
 import { toHaveMismatchWithinRange } from './matchers/to-have-mismatch-within-range';
 
-export * from './interfaces';
+/*
+ * @todo Explicitly referencing the barrel file seems to be necessary when enabling the
+ * isolatedModules compiler option.
+ */
+export * from './interfaces/index';
 
 export const elementShotMatchers: jasmine.CustomMatcherFactories = {
     toBeRegressionFree,
