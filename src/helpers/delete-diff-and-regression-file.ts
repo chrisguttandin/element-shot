@@ -1,6 +1,6 @@
 import { unlinkSync } from 'fs';
 
-export const deleteDiffAndRegressionFile = (filename: String): void => {
+export const deleteDiffAndRegressionFile = (filename: string): void => {
     try {
         unlinkSync(`${ filename }.diff.png`);
     } catch (err) {
