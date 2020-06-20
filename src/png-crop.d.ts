@@ -1,5 +1,4 @@
 declare module 'png-crop' {
-
     import { Buffer } from 'buffer';
     import { ReadStream } from 'fs';
 
@@ -10,7 +9,6 @@ declare module 'png-crop' {
     export type TCallbackFunction = TErrorCallbackFunction | TSuccessCallbackFunction;
 
     export interface IConfiguration {
-
         height: null | number;
 
         left?: number;
@@ -18,16 +16,14 @@ declare module 'png-crop' {
         top?: number;
 
         width: null | number;
-
     }
 
-    export function crop (
+    export function crop(
         streamOrBufOrPath: string | Buffer | ReadStream,
         destPath: string,
         config: IConfiguration,
         done: TCallbackFunction
     ): void;
 
-    export function cropToStream (streamOrBufOrPath: string | Buffer | ReadStream, config: IConfiguration, done: TCallbackFunction): void;
-
+    export function cropToStream(streamOrBufOrPath: string | Buffer | ReadStream, config: IConfiguration, done: TCallbackFunction): void;
 }

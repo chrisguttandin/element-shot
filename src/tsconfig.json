@@ -1,8 +1,6 @@
 {
-  "compilerOptions": {
-    "types": [
-      "jasmine"
-    ]
-  },
-  "extends": "tsconfig-holy-grail/src/tsconfig-node"
+    "compilerOptions": {
+        "types": ["jasmine"]
+    },
+    "extends": "tsconfig-holy-grail/src/tsconfig-node"
 }

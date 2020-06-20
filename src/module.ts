@@ -21,7 +21,7 @@ export const elementShotMatchers: jasmine.CustomMatcherFactories = {
 };
 
 export const expectElementShot = (result: IResembleResult): IElementShotMatchers => {
-    return (<any> expect)(result);
+    return (<any>expect)(result);
 };
 
 export const resembleElementShot = async (locator: Locator, filename: string): Promise<IResembleResult> => {
@@ -30,17 +30,17 @@ export const resembleElementShot = async (locator: Locator, filename: string): P
 
     return new Promise<IResembleResult>((resolve, reject) => {
         try {
-            const baseline = readFileSync(`${ filename }.${ browserName }.baseline.png`);
+            const baseline = readFileSync(`${filename}.${browserName}.baseline.png`);
 
             resemble(baseline)
                 .compareTo(elementShot)
                 .onComplete(({ dimensionDifference, getBuffer, isSameDimensions, misMatchPercentage }) => {
-                    writeFileSync(`${ filename }.${ browserName }.diff.png`, getBuffer());
-                    writeFileSync(`${ filename }.${ browserName }.regression.png`, elementShot);
+                    writeFileSync(`${filename}.${browserName}.diff.png`, getBuffer());
+                    writeFileSync(`${filename}.${browserName}.regression.png`, elementShot);
 
                     resolve({
                         dimensionDifference,
-                        filename: `${ filename }.${ browserName }`,
+                        filename: `${filename}.${browserName}`,
                         isSameDimensions,
                         mismatchPercentage: parseFloat(misMatchPercentage)
                     });
@@ -49,11 +49,11 @@ export const resembleElementShot = async (locator: Locator, filename: string): P
             if (err.code === 'ENOENT') {
                 // @todo Create the directory in case it is missing.
 
-                writeFileSync(`${ filename }.${ browserName }.baseline.png`, elementShot);
+                writeFileSync(`${filename}.${browserName}.baseline.png`, elementShot);
 
                 resolve({
                     dimensionDifference: { height: 0, width: 0 },
-                    filename: `${ filename }.${ browserName }`,
+                    filename: `${filename}.${browserName}`,
                     isSameDimensions: true,
                     mismatchPercentage: 0
                 });

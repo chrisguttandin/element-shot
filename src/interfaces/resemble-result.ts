@@ -1,11 +1,8 @@
 export interface IResembleResult {
-
     dimensionDifference: {
-
         height: number;
 
         width: number;
-
     };
 
     filename: string;
@@ -13,5 +10,4 @@ export interface IResembleResult {
     isSameDimensions: boolean;
 
     mismatchPercentage: number;
-
 }

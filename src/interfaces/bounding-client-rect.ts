@@ -1,5 +1,4 @@
 export interface IBoundingClientRect {
-
     height: number;
 
     width: number;
@@ -7,5 +6,4 @@ export interface IBoundingClientRect {
     x: number;
 
     y: number;
-
 }

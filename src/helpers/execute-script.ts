@@ -7,7 +7,7 @@ import { browser } from 'protractor';
  * error: unknown sessionId' error which occurs from time to time.
  */
 
-export const executeScript = <T> (script: string, retries = 5, ...args: any[]): Promise<T> => {
+export const executeScript = <T>(script: string, retries = 5, ...args: any[]): Promise<T> => {
     return new Promise<T>((resolve, reject) => {
         browser
             .executeScript<T>(script, ...args)
