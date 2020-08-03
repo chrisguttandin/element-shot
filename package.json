@@ -39,7 +39,7 @@
         "mocha": "^8.1.0",
         "prettier": "^2.0.5",
         "pretty-quick": "^2.0.1",
-        "tsconfig-holy-grail": "^11.0.17",
+        "tsconfig-holy-grail": "^11.0.18",
         "tslint": "^6.1.2",
         "tslint-config-holy-grail": "^50.0.7",
         "typescript": "^3.9.6"
