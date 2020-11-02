@@ -18,7 +18,7 @@ module.exports = (grunt) => {
             cmd: 'webdriver-manager update --gecko false && protractor config/protractor/config.js'
         },
         'test-integration': {
-            cmd: 'mocha --bail --recursive --require config/mocha/config-integration.js test/integration'
+            cmd: 'mocha --bail --parallel --recursive --require config/mocha/config-integration.js test/integration'
         }
     };
 };
