@@ -16,7 +16,7 @@
     },
     "description": "A module to take a screenshot of an HTML element with Protractor and test it with Jasmine.",
     "devDependencies": {
-        "@babel/core": "^7.12.8",
+        "@babel/core": "^7.12.9",
         "@babel/preset-env": "^7.12.7",
         "@babel/register": "^7.12.1",
         "@commitlint/cli": "^11.0.0",
