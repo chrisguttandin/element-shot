@@ -37,7 +37,7 @@
         "jasmine": "^3.6.3",
         "load-grunt-config": "^3.0.1",
         "mocha": "^8.2.1",
-        "prettier": "^2.2.0",
+        "prettier": "^2.2.1",
         "pretty-quick": "^3.1.0",
         "tsconfig-holy-grail": "^11.0.35",
         "tslint": "^6.1.3",
