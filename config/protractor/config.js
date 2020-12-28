@@ -9,11 +9,11 @@ const chromeCapabilities = {
 };
 
 module.exports.config = {
-    directConnect: !!env.TRAVIS,
+    directConnect: !!env.CI,
 
     framework: 'jasmine',
 
-    multiCapabilities: env.TRAVIS ? [chromeCapabilities] : [chromeCapabilities, { browserName: 'safari' }],
+    multiCapabilities: env.CI ? [chromeCapabilities] : [chromeCapabilities, { browserName: 'safari' }],
 
     specs: ['../../test/e2e/**/*.js']
 };
