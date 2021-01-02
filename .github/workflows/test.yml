@@ -15,10 +15,13 @@ jobs:
         strategy:
             matrix:
                 include:
-                    - node: 14.x
+                    - node-version: 14.x
+                      target: chrome
                       type: e2e
                 node-version: [10.x, 12.x, 14.x]
+                target: [node]
                 type: [integration]
+            max-parallel: 3
 
         steps:
             - name: Checkout repository
@@ -41,6 +44,7 @@ jobs:
               run: npm ci
 
             - env:
+                  TARGET: ${{ matrix.target }}
                   TYPE: ${{ matrix.type }}
-              name: Run tests
+              name: Run ${{ matrix.type }} tests
               run: npm test
