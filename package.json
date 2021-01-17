@@ -24,7 +24,7 @@
         "@types/jasmine": "^3.6.2",
         "@types/pngjs": "^3.4.2",
         "chai": "^4.2.0",
-        "commitizen": "^4.2.2",
+        "commitizen": "^4.2.3",
         "cz-conventional-changelog": "^3.3.0",
         "eslint": "^7.17.0",
         "eslint-config-holy-grail": "^48.0.5",
