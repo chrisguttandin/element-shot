@@ -18,7 +18,7 @@ jobs:
                     - node-version: 14.x
                       target: chrome
                       type: e2e
-                node-version: [10.x, 12.x, 14.x]
+                node-version: [12.x, 14.x]
                 target: [node]
                 type: [integration]
             max-parallel: 3
