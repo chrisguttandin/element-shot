@@ -53,12 +53,6 @@
         "src/"
     ],
     "homepage": "https://github.com/chrisguttandin/element-shot",
-    "husky": {
-        "hooks": {
-            "commit-msg": "commitlint --edit --extends @commitlint/config-angular",
-            "pre-commit": "pretty-quick --config config/prettier/config.json --staged && grunt lint"
-        }
-    },
     "license": "MIT",
     "main": "build/node/module.js",
     "name": "element-shot",
@@ -67,6 +61,7 @@
         "url": "https://github.com/chrisguttandin/element-shot.git"
     },
     "scripts": {
+        "prepare": "husky install",
         "prepublishOnly": "grunt build",
         "test": "grunt lint && grunt test"
     },
