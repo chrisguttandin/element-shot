@@ -20,7 +20,7 @@
         "@babel/core": "^7.15.5",
         "@babel/preset-env": "^7.15.6",
         "@babel/register": "^7.15.3",
-        "@commitlint/cli": "^13.1.0",
+        "@commitlint/cli": "^13.2.0",
         "@commitlint/config-angular": "^13.1.0",
         "@types/jasmine": "^3.9.1",
         "@types/pngjs": "^6.0.1",
