@@ -13,7 +13,7 @@
         "png-crop": "0.0.2",
         "protractor": "^7.0.0",
         "resemblejs": "^4.1.0",
-        "tslib": "^2.3.1"
+        "tslib": "^2.4.0"
     },
     "description": "A module to take a screenshot of an HTML element with Protractor and test it with Jasmine.",
     "devDependencies": {
