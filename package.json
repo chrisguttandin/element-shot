@@ -21,7 +21,7 @@
         "@babel/core": "^7.18.2",
         "@babel/preset-env": "^7.18.2",
         "@babel/register": "^7.17.7",
-        "@commitlint/cli": "^17.0.1",
+        "@commitlint/cli": "^17.0.2",
         "@commitlint/config-angular": "^17.0.0",
         "@types/jasmine": "^3.10.6",
         "@types/pngjs": "^6.0.1",
