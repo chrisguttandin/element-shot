@@ -9,7 +9,7 @@
         }
     },
     "dependencies": {
-        "canvas": "^2.10.0",
+        "canvas": "^2.10.1",
         "png-crop": "0.0.2",
         "protractor": "^7.0.0",
         "resemblejs": "^4.1.0",
