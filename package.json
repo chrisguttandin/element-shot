@@ -33,7 +33,7 @@
         "grunt": "^1.6.1",
         "grunt-cli": "^1.4.3",
         "grunt-sh": "^0.2.1",
-        "husky": "^8.0.1",
+        "husky": "^8.0.3",
         "jasmine": "^3.99.0",
         "load-grunt-config": "^4.0.1",
         "mocha": "^10.0.0",
