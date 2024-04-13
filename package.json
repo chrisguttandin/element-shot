@@ -15,7 +15,7 @@
         "resemblejs": "^4.1.0",
         "tslib": "^2.4.0"
     },
-    "description": "A module to take a screenshot of an HTML element with Protractor and test it with Jasmine.",
+    "description": "!!! DEPRECATED !!! A module to take a screenshot of an HTML element with Protractor and test it with Jasmine.",
     "devDependencies": {
         "@babel/cli": "^7.19.3",
         "@babel/core": "^7.19.3",
